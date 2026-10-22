@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenToWork Frame Studio | LinkedIn Profile Frame Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+        </svg>
+        <span>Add Frame To LinkedIn Profile Picture Studio</span>
+      </div>
+      <p class="tagline">Create your professional LinkedIn profile photo locally & securely</p>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+      <!-- Controls Panel -->
+      <section class="panel controls-panel">
+        <h2>1. Upload Photo</h2>
+        <div class="upload-box" id="drop-zone">
+          <input type="file" id="photo-input" accept="image/*" hidden />
+          <div class="upload-content">
+            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+            </svg>
+            <p><strong>Click to browse</strong> or drag & drop photo</p>
+            <span class="file-info">PNG, JPG, or WebP (processed in browser)</span>
+          </div>
+        </div>
+
+        <h2>2. Adjust Photo Position</h2>
+        <div class="adjustments">
+          <div class="slider-group">
+            <label for="zoom-slider">Photo Zoom / Scale</label>
+            <input type="range" id="zoom-slider" min="0.2" max="3" step="0.01" value="1" disabled />
+          </div>
+          <div class="slider-group">
+            <label for="rotate-slider">Photo Rotate</label>
+            <input type="range" id="rotate-slider" min="-180" max="180" step="1" value="0" disabled />
+          </div>
+          <button id="reset-btn" class="btn-secondary" disabled>Reset Adjustments</button>
+        </div>
+      </section>
+
+      <!-- Live Preview Panel -->
+      <section class="panel preview-panel">
+        <h2>Live Preview</h2>
+        <div class="preview-stage">
+          <!-- Canvas Container -->
+          <div class="canvas-wrapper">
+            <canvas id="preview-canvas" width="800" height="800"></canvas>
+          </div>
+          <p class="drag-hint">💡 Drag photo directly on preview to position inside the frame</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button id="download-btn" class="btn-primary" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download High-Res Profile Photo
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer class="app-footer">
+      <p>🔒 <strong>Privacy First:</strong> Your photos never leave your device. All editing is processed locally using client-side JavaScript canvas.</p>
+    </footer> -->
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
